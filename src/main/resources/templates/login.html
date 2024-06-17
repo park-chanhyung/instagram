@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" th:href="@{/css/gpt.css}">
+</head>
+<body>
+<header>
+<div class="container">
+    <div class="phones">
+        <img th:src="@{/images/background.png}" alt="background" class="background">
+<!--        <img src="image.png" alt="Phone" class="phone">-->
+    </div>
+<!--        <img th:src="@{/images/background.png}" alt="background" class="background">-->
+    <div class="right-section">
+        <div class="login-container">
+            <img th:src="@{/images/logo.png}" alt="Instagram Logo" class="logo">
+            <form class="login-form" th:action="@{/login}" method="post">
+<!--                <div th:if="${param.error}">-->
+<!--                    <div class="alert alert-danger">-->
+<!--                        사용자ID 또는 비밀번호를 확인해 주세요.-->
+<!--                    </div>-->
+<!--                </div>-->
+                <input type="text" name="username" id="username" placeholder="전화번호, 사용자 이름 또는 이메일">
+                <input type="password" name="password" id="password" placeholder="비밀번호">
+                <button type="submit">로그인</button>
+            </form>
+            <div class="or">또는</div>
+            <div class="facebook-login">
+                <img th:src="@{/images/facebook.png}" alt="Facebook Logo">
+                <span>Facebook으로 로그인</span>
+            </div>
+            <a href="#" class="forgot-password">비밀번호를 잊으셨나요?</a>
+        </div>
+        <div class="signup-container">
+            <div class="signup">
+                <span>계정이 없으신가요? </span>
+                <a th:href="@{/join}">가입하기</a>
+            </div>
+            <div class="download-app">
+                <span>앱을 다운로드하세요.</span>
+                <div class="app-links">
+                    <img th:src="@{/images/googleplay.png}" alt="Google Play">
+                    <img th:src="@{/images/microsoft.png}" alt="Microsoft Store">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">Meta</a>
+        <a href="#">소개</a>
+        <a href="#">블로그</a>
+        <a href="#">채용 정보</a>
+        <a href="#">도움말</a>
+        <a href="#">API</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">약관</a>
+        <a href="#">위치</a>
+        <a href="#">Instagram Lite</a>
+        <a href="#">Threads</a>
+        <a href="#">연락처 업로드 & 비사용자</a>
+        <a href="#">Meta Verified</a>
+    </div>
+    <div class="footer-bottom">
+        <span>한국어</span>
+        <span>© 2024 Instagram from Meta</span>
+    </div>
+</footer>
+</body>
+</html>

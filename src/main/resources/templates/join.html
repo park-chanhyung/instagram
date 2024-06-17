@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" th:href="@{/css/join.css}">
+</head>
+<body>
+<div class="container">
+    <div class="right-section">
+        <div class="login-container">
+            <img th:src="@{/images/logo.png}" alt="Instagram Logo" class="logo">
+            <p class="bold-gray">친구들의 사진과 동영상을 보려면 가입하세요.</p>
+            <button class="facebook-login">
+                <img th:src="@{/images/facebook.png}" alt="Facebook Logo">
+                <span>Facebook으로 로그인</span>
+            </button>
+            <div class="or">또는</div>
+            <form class="login-form"  th:action="@{/join}" th:object="${userForm}" method="post">
+                <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+                <input type="text" th:field="*{username}" placeholder="휴대폰 번호">
+                <input type="text" th:field="*{name}"  placeholder="아이디">
+<!--                <input type="text" th:field="*{username}" placeholder="사용자 이름">-->
+                <input type="password" th:field="*{password1}" placeholder="비밀번호">
+                <input type="password" th:field="*{password2}" placeholder="비밀번호확인">
+            <p class="dimmed-text">저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 Instagram에 업로드할 수도 있습니다. <a href="#">더 알아보기</a></p>
+                <button type="submit">가입</button>
+            </form>
+        </div>
+        <div class="signup-container">
+            <div class="signup">
+                <span>계정이 있으신가요? </span>
+                <a href="#">로그인</a>
+            </div>
+            <div class="download-app">
+                <span>앱을 다운로드하세요.</span>
+                <div class="app-links">
+                    <img th:src="@{/images/googleplay.png}" alt="Google Play">
+                    <img th:src="@{/images/microsoft.png}" alt="Microsoft Store">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-links">
+        <a href="#">Meta</a>
+        <a href="#">소개</a>
+        <a href="#">블로그</a>
+        <a href="#">채용 정보</a>
+        <a href="#">도움말</a>
+        <a href="#">API</a>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">약관</a>
+        <a href="#">위치</a>
+        <a href="#">Instagram Lite</a>
+        <a href="#">Threads</a>
+        <a href="#">연락처 업로드 & 비사용자</a>
+        <a href="#">Meta Verified</a>
+    </div>
+    <div class="footer-bottom">
+        <span>한국어</span>
+        <span>© 2024 Instagram from Meta</span>
+    </div>
+</footer>
+</body>
+</html>

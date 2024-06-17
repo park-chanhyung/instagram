@@ -25,4 +25,10 @@ public class SiteUser {
 
     private LocalDateTime createTime;
 
+    @Column
+    private String filename;
+
+    @Column
+    private String filePath;
+
 }

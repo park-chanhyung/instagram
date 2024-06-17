@@ -10,8 +10,10 @@ public class controler {
     public String root() {
         return "login";
     }
-    @GetMapping("/main")
-    public String mainPage() {
-        return "main";
+
+
+    @GetMapping("/profile")
+    public String profile() {
+        return "profile";
     }
 }

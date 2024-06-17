@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>프로필 편집</title>
+</head>
+<body>
+<h1>프로필 편집</h1>
+<form th:action="@{/profile/edit}" th:object="${user}" method="post" enctype="multipart/form-data">
+    <label for="name">이름:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required/>
+
+    <label for="password">비밀번호:</label>
+    <input type="password" id="password" name="password" th:field="*{password}" required/>
+
+    <label for="profilePicture">프로필 사진:</label>
+    <input type="file" id="profilePicture" name="profilePicture"/>
+    <div>
+        <img th:src="@{${user.filePath}}" alt="Profile Picture" style="width: 150px; height: 150px;"/>
+    </div>
+    <button type="submit">저장</button>
+</form>
+</body>
+</html>
